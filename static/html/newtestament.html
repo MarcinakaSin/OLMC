@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Our Lady Mother of the Church | Funerals</title>
+	<meta name="author" content="Our Lady Mother of the Church" />
+    <link href="styles/custom2015.css" rel="stylesheet">
+
+
+    <!-- Bootstrap -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <link href="dist/css/bootstrap-theme.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- AngularJS -->
+    <script src="/angular/angular-v1.3.16.min.js"></script>
+</head>
+
+<body ng-app="pdfInfo">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Our Lady Mother of the Church</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+			<li><a href="/">Welcome</a></li>
+			<li><a href="/times">Mass Times</a></li>
+			<li class="dropdown active">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Worship<span class="caret active"></span></a>
+	            <ul class="dropdown-menu" role="menu">
+	              <li><a href="/funerals">Funerals</a></li>
+	              <!--<li class="divider"></li>-->
+	            </ul>
+	        </li>
+			<li><a href="/bulletin">Bulletin</a></li>
+			<li><a href="/education">Religious Education</a></li>
+			<li><a href="/staff">Staff</a></li>
+			<li><a href="/contact">Contact</a></li>
+			<li><a href="/about">About</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://connectnow.parishsoft.com/Chicago/Default.aspx" target="_blank">ConnectNow</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+		
+		 <!-- Begin page content -->
+	<div class="container" ng-controller="MainController">
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-md-offset-3"><img data-src="holder.js/1140x500" src="/images/heros/OLMC_0081a.JPG" class="img-rounded img-responsive"></div>
+		</div>
+	    <div class="page-header">
+	        <h2>Funeral Planning at Our Lady, Mother of the Church</h2>
+	    </div>
+	    <h3 class="lead">
+			<a href="/funerals"><span class="glyphicon glyphicon-share-alt"></span></a> New Testament Readings
+	    </h3>
+	    <div class="row">
+	    	<div class="col-xs-12">
+			    <table class="table table-striped">
+		            <tr>
+		                <th width="5%">#</th>
+		                <th width="75%">Title</th>
+		                <th width="20%">Link</th>
+		            </tr>
+		            <tr ng-repeat="newtestament in newtestaments">
+		                <td>{{ newtestament.number }}</td>
+						<td>{{ newtestament.title }}</td>
+						<td><a target="_new" ng-href="/pdf/new_testament/{{ newtestament.pdf }}">{{ newtestament.reference }}</a></td>
+		            </tr>
+		        </table>
+			</div>
+		</div>
+		<!--<div class="row">
+			<div class="col-xs-8 lead">New Testament Reading, Easter Season<br />
+				Acts of the Apostles 10:34-36, 42-43<br />
+				Read by: _________________________
+			</div>
+			<div class="col-xs-4 lead">
+				# 1012-1
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the Acts of the Apostles</strong><br />
+				Peter proceeded to speak, saying:<br />
+					“In truth, I see that God shows no partiality.<br />
+				Rather, in every nation whoever fears him and acts uprightly <br />
+				 is acceptable to him.<br />
+				You know the word that he sent to the children of Israel <br />
+				as he proclaimed peace through Jesus Christ, who is Lord of all.<br />
+				He commissioned us to preach to the people <br />
+				and testify that he is the one appointed by God <br />
+				as judge of the living and the dead.<br />
+				To him all the prophets bear witness, <br />
+				that everyone who receives in him <br />
+				will receive forgiveness of sins through his name.”
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading, Easter Season<br />
+				Revelation 14:13<br />
+				Read by: _________________________
+			</div>
+			<div class="col-xs-4 lead">
+				# 1012-2
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A reading from the book of Revelation</strong><br />
+
+				I, John, heard a voice from heaven say, “Write this:<br />
+				Blessed are the dead who die in the Lord from now on.”<br />
+				“Yes,” said the Spirit, <br />
+				“let them find rest from their labors, <br />
+				for their works accompany them.”
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading, Easter Season<br />
+				Revelation 20:11-21:1<br />
+				Read by: _______________________
+			</div>
+			<div class="col-xs-4 lead">
+				# 1012-3
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A reading from the Book of Revelation</strong><br />
+
+				I, John saw a large white throne and the one who was sitting on it.<br />
+				The earth and the sky fled from his presence <br />
+				and there was no place for them.<br />
+				I saw the dead, the great and the lowly, standing before the throne, <br />
+				and scrolls were opened.<br />
+				Then another scroll was opened, the book of life.<br />
+				The dead were judge according to their deeds, <br />
+				but what was written in the scrolls.<br />
+				The sea gave up its dead; <br />
+				then Death and Hades gave up their dead.<br />
+				All the dead were judged according to their deeds.<br />
+				Then Death and Hades were thrown into the poor of fire. <br />
+				(This pool of fire is the second death.)<br />
+				Anyone whose name was not found written in the book of life <br />
+				was thrown into the pool of fire.
+				<br /><br />
+				Then I saw a new heaven and new earth.<br />
+				The former heaven and the former earth had passed away, and the sea was no more.
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading, Easter Season<br />
+				Revelation 21:1-5a,6b-7<br />
+				Read by: _______________________
+			</div>
+			<div class="col-xs-4 lead">
+				# 1012-4
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the book of Revelation</strong><br />
+				I saw a new heaven and a new earth. The former heaven and the former earth had passed away, and the sea was no more. I also saw the holy city, a new Jerusalem, corning down out of heaven from God, prepared as a bride adorned for her husband. I heard a loud voice from the throne saying, "Behold, God's dwelling is with the human race. <br />
+				He will dwell with them and they will be his people and God himself will always be with them as their God. He will wipe every tear from their eyes, and there shall be no more death or mourning, wailing or pain, for the old order has passed away." <br />
+				The one who sat on the throne said, "Behold, I make all things new. I am the Alpha and the Omega, the beginning and the end. To the thirsty I will give a gift from the spring of life-giving water. The victor will inherit these gifts, and I shall be his God, and he will be my son."
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading #2 <br />			 
+				Read by: ________________________ 
+			</div>
+			<div class="col-xs-4 lead">
+				Romans 5:5-11
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the letter of Paul to the Romans</strong><br />
+				Hope does not disappoint, because the love of God has been poured out into our hearts through the Holy Spirit that has been given to us. For Christ, while we were still helpless, yet died at the appointed time for the ungodly. Indeed, only with difficulty does one die for a just person, though perhaps for a good person one might even find courage to die. <br />
+				But God proves his love for us in that while we were still sinners Christ died for us. How much more then, since we are now justified by his blood, will we be saved through him from the wrath. <br />
+				Indeed, if, while we were enemies, we were reconciled to God through the death of his Son, how much more, once reconciled, will we be saved by his life. Not only that, but we also boast of God through our Lord Jesus Christ, through whom we have now received reconciliation. 
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading #4
+				Long version 
+				Read by: ________________________ 
+			</div>
+			<div class="col-xs-4 lead">
+				Romans 6:3-9
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A reading from the letter of Paul to the Romans </strong><br />
+				Are you unaware that we who were baptized into Christ Jesus were baptized into his death? We were indeed buried with him through baptism into death, so that, just as Christ was raised from the dead by the glory of the Father, we too might live in newness of life. For if we have grown into union with him through a death like his, we shall also be united with him in the resurrection. <br />
+				We know that our old self was crucified with him, so that our sinful body might be done away with, that we might no longer be in slavery to sin. For a dead person has been absolved from sin. If, then, we have died with Christ, we believe that we shall also live with him. We know that Christ, raised from the dead, dies no more; death no longer has power over him. 
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading #4 			 
+				Short version 
+				Read by: ____________________ 
+			</div>
+			<div class="col-xs-4 lead">
+				Romans 6:3-4, 8-9
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the letter of Paul to the Romans </strong><br />
+				Are you unaware that we who were baptized into Christ Jesus were baptized into his death? We were indeed buried with him through baptism into death, so that, just as Christ was raised from the dead by the glory of the Father, we too might live in newness of life. <br />
+				If, then, we have died with Christ, we believe that we shall also live with him. We know that Christ, raised from the dead, dies no more; death no longer has power over him. 
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading #6 			 
+				Read by: _____________________ 
+			</div>
+			<div class="col-xs-4 lead">
+				Romans 8:31-35, 37-39
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the letter of Paul to the Romans </strong><br />
+				If God is for us, who can be against us? He who did not spare his own Son but handed him over for us all, how will he not also give us everything else along with him? Who will bring a charge against God's chosen ones? It is God who acquits us. Who will condemn? It is Christ Jesus who died, rather, was raised, who also is at the right hand of God, who indeed intercedes for us. <br />
+				What will separate us from the love of Christ? Will anguish, or distress, or persecution, or famine, or nakedness, or peril, or the sword? No, in all these things we conquer overwhelmingly through him who loved us.<br />
+				For I am convinced that neither death, nor life, nor angels, nor principalities, nor present things, nor future things, nor powers, nor height, nor depth, nor any other creature will be able to separate us from the love of God in Christ Jesus our Lord. 
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading #10 			 
+				Read by: _____________________ 
+			</div>
+			<div class="col-xs-4 lead">
+				2 Corinthians 4:14-5:1
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the second letter of Paul to the Corinthians</strong><br />
+				We know that the one who raised the Lord Jesus will raise us also with Jesus and place us with you in his presence. Everything indeed is for you, so that the grace bestowed in abundance on more and more people may cause the thanksgiving to overflow for the glory of God. <br />
+				Therefore, we are not discouraged; rather, although our outer self is wasting away, our inner self is being renewed day by day. For this momentary light affliction is producing for us an eternal weight of glory beyond all comparison, as we look not to what is seen but to what is unseen; for what is seen is transitory, but what is unseen is eternal. <br />
+				F or we know that if our earthly dwelling, a tent, should be destroyed, we have a building from God, a dwelling not made with hands, eternal in heaven. 
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading #13 		 
+				Read by: ______________________ 
+			</div>
+			<div class="col-xs-4 lead">
+				1 Thessalonians 4:13-18
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the first letter of Paul to the Thessalonians</strong><br />
+				We do not want you to be unaware, brothers [and sisters], about those who have fallen asleep, so that you may not grieve like the rest, who have no hope. For if we believe that Jesus died and rose, so too will God, through Jesus, bring with him those who have fallen asleep. <br />
+				Indeed, we tell you this, on the word of the Lord, that we who are alive, who are left until the coming of the Lord, will surely not precede those who have fallen asleep. For the Lord himself, with a word of command, with the voice of an archangel and with the trumpet of God, will come down from heaven, and the dead in Christ will rise first. <br />
+				Then we who are alive, who are left, will be caught up together with them in the clouds to meet the Lord in the air. Thus we shall always be with the Lord. Therefore, console one another with these words. 
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading #19 		
+				Read by: ________________________ 
+			</div>
+			<div class="col-xs-4 lead">
+				Revelation 21:1-5a, 6b-7 
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the book of Revelation </strong><br />
+				I saw a new heaven and a new earth. The former heaven and the former earth had passed away, and the sea was no more. I also saw the holy city, a new Jerusalem, corning down out of heaven from God, prepared as a bride adorned for her husband. I heard a loud voice from the throne saying, "Behold, God's dwelling is with the human race. <br />
+				He will dwell with them and they will be his people and God himself will always be with them as their God. He will wipe every tear from their eyes, and there shall be no more death or mourning, wailing or pain, for the old order has passed away." <br />
+				The one who sat on the throne said, "Behold, I make all things new. I am the Alpha and the Omega, the beginning and the end. To the thirsty I will give a gift from the spring of life-giving water. The victor will inherit these gifts, and I shall be his God, and he will be my son." 
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading #44 			
+				Read by: _______________________ 
+			</div>
+			<div class="col-xs-4 lead">
+				1 Peter 1:3-9 
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the first letter of Peter </strong><br />
+				Blessed be the God and Father of our Lord Jesus Christ, who in his great mercy gave us a new birth to a living hope through the resurrection of Jesus Christ from the dead, to an inheritance that is imperishable, undefiled, and unfading, kept in heaven for you who by the power of God are safeguarded through faith, to a salvation that is ready to be revealed in the final time. <br />
+				In this you rejoice, although now for a little while you may have to suffer through various trials, so that the genuineness of your faith, more precious than gold that is perishable even though tested by fire, may prove to be for praise, glory, and honor at the revelation of Jesus Christ. <br />
+				Although you have not seen him you love him; even though you do not see him now yet believe in him, you rejoice with an indescribable and glorious joy, as you attain the goal of faith, the salvation of your souls. 
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading # 489			
+				Read by: _______________________
+			</div>
+			<div class="col-xs-4 lead">
+				Phil 4:4-9
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the Letter of Paul to the Philippians</strong><br />
+				Rejoice in the Lord always.  I shall say it again:  rejoice!  Your kindness should be known to all.  The Lord is near.  Have no anxiety at all, but in everything by prayer and petition with thanksgiving, make your requests known to God.  Then the peace of God that surpasses all understanding will guard your hearts and minds in Christ Jesus.
+				<br /><br />
+				Finally, brothers and sisters, whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is lovely, whatever is gracious, if there is any excellence and if there is anything worthy of praise, think about these things.
+				<br /><br />
+				Keep on doing what you have learned and received and heard and seen in me.  Then the God of peace will be with you.
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8 lead">
+				New Testament Reading #591 		
+				Read by: _______________________ 
+			</div>
+			<div class="col-xs-4 lead">
+				2 Timothy 4:6-8
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12">
+				<strong>A Reading from the second letter of Paul to Timothy</strong><br />
+				I am already being poured out like a libation, and the time of my departure is at hand.<br />
+				I have competed well; I have finished the race; I have kept the faith. <br />
+				From now on the crown of righteousness awaits me, which the Lord, the just judge,<br />
+				will award to me on that day, and not only to me, but to all who have longed for his appearance. 
+				<br /><br />
+				<strong>The Word of the Lord.</strong><br />
+				Response: Thanks be to God.<br /><br />
+			</div>
+		</div>-->
+		<footer class="footer" style="margin-top:20px;">
+			<div class="row">
+				<div class="col-xs-12"><img data-src="holder.js/1140x150" src="/images/heros/OLMC_0289a.JPG" class="img-rounded img-responsive"></div>
+			</div>
+	      	<div class="container">
+	        	<p class="text-muted" style="text-align:center;">&copy; 2015</p>
+	      	</div>
+    	</footer>
+	</div>
+
+    <!-- Modules -->
+    <script src="/angular/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="/angular/controllers/MainController.js"></script>
+
+    <!-- Directives 
+    <script src="/angular/directives/appPDFInfo.js"></script>
+    <script src="/angular/directives/appPDFInfo.html"></script>-->
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
+
+	<script type="text/javascript">
+		
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-22789078-1']);
+		_gaq.push(['_trackPageview']);
+		
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+		
+	</script>
+</body>
+</html>

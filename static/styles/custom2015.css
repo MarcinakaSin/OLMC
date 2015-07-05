@@ -1,0 +1,133 @@
+
+/* Retina assets */
+
+#welcome_hero {
+	height: 200px;
+	background-image: url('/images/heros/petal.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#times_hero {
+	height: 200px;
+	background-image: url('/images/heros/times.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#staff_hero {
+	height: 200px;
+	background-image: url('/images/heros/staff.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#contact_hero {
+	height: 200px;
+	background-image: url('/images/heros/contact.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#about_hero {
+	height: 200px;
+    background-image: url('/images/heros/about.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Mass Times */
+
+table#times {
+    background-color: white;
+    border: 0;
+    border-collapse: collapse;
+    border-bottom: 3px solid #f2f4f8;
+}
+#times tr p {
+    margin: 5px 8px;
+}
+#times tr.odd {
+    background-color: #f2f4f8;
+}
+
+/* Contact */
+
+#mapCanvas {
+    margin-left: -10px;
+    height: 260px;
+    width: 260px;
+    background-image: url('/images/Map.png');
+    background-size: 260px 260px;
+}
+#content p.subtitle {
+    font-size: 11px;
+    margin-top: 6px;
+}
+#content h2.thanks {
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+#facebook_icon {
+    width: 50px;
+    height: 50px;
+    background-image: url('/images/Facebook.png');
+    background-size: 50px 50px;
+}
+#sent_icon {
+    margin-left: auto;
+    margin-right: auto;
+    width: 112px;
+    height: 114px;
+    background-image: url('/images/Sent.png');
+    background-size: 112px 114px;
+}
+.popImage {
+    -webkit-transition: -webkit-transform 200ms;
+    -moz-transition: -moz-transform: 200ms;
+    transition: transform 200ms;
+}
+.popImage:hover {
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    transform: scale(1.04);
+}
+/* Bulletins */
+
+#bulletins {
+    margin-top: 20px;
+    margin-left: -16px;
+    padding-left: 16px;
+    width: 780px;
+    background-image: -webkit-linear-gradient(white, #e6e6e6);
+    background-image: -moz-linear-gradient(white, #e6e6e6);
+    background-image: linear-gradient(white, #e6e6e6);
+    background-size: 790px 231px;
+    background-repeat: no-repeat;
+}
+.bulletin {
+    width: 177px;
+    float: left;
+    margin-right: 14px;
+}
+#content .bulletin p {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    padding: 0;
+}
+#bulletins .bulletin p {
+    color: #7F7F7F;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.bulletin a img {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -webkit-transition: box-shadow 200ms;
+    -moz-transition: box-shadow 200ms;
+    transition: box-shadow 200ms;
+}
+.bulletin a:hover img {
+    box-shadow: 0 0 6px #4d688c;
+}
+.bulletin.last {
+    

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Our Lady Mother of the Church | Funerals</title>
+	<meta name="author" content="Our Lady Mother of the Church" />
+    <link href="styles/custom2015.css" rel="stylesheet">
+
+
+    <!-- Bootstrap -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <link href="dist/css/bootstrap-theme.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- AngularJS -->
+    <script src="/angular/angular-v1.3.16.min.js"></script>
+</head>
+
+<body ng-app="pdfInfo">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="MainController">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Our Lady Mother of the Church</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+			<li><a href="/">Welcome</a></li>
+			<li><a href="/times">Mass Times</a></li>
+			<li class="dropdown active">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Worship<span class="caret"></span></a>
+	            <ul class="dropdown-menu" role="menu">
+	              <li><a href="/funerals">Funerals</a></li>
+	              <!--<li class="divider"></li>-->
+	            </ul>
+	        </li>
+			<li><a href="/bulletin">Bulletin</a></li>
+			<li><a href="/education">Religious Education</a></li>
+			<li><a href="/staff">Staff</a></li>
+			<li><a href="/contact">Contact</a></li>
+			<li><a href="/about">About</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://connectnow.parishsoft.com/Chicago/Default.aspx" target="_blank">ConnectNow</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+		
+		 <!-- Begin page content -->
+	<div class="container" ng-controller="MainController">
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-md-offset-3"><img data-src="holder.js/1140x500" src="/images/heros/OLMC_0081a.JPG" class="img-rounded img-responsive"></div>
+		</div>
+	    <div class="page-header">
+	        <h2>Funeral Planning at Our Lady, Mother of the Church</h2>
+	    </div>
+		<h3 class="lead">
+			<a href="/funerals"><span class="glyphicon glyphicon-share-alt"></span></a> Responsorial Psalm
+	    </h3>
+	    <div class="row">
+	    	<div class="col-xs-12">
+			    <table class="table table-striped">
+		            <tr>
+		                <th width="15%">#</th>
+		                <th width="85%">Title</th>
+		            </tr>
+		            <tr ng-repeat="psalm in psalms">
+		                <td>{{ psalm.number }}) <a target="_new" ng-href="/pdf/responsorial_psalms/{{ psalm.pdf }}">Psalm {{ psalm.reference }}</a>:</td>
+						<td>{{ psalm.title }}</td>
+		            </tr>
+		        </table>
+			</div>
+		</div>
+		<!--<div class="row">
+			<div class="col-xs-12 lead">
+				Psalm 19: 8, 9,10,11
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>Lord, you have the words of everlasting life.</strong>
+				<br /><br />
+				The law of the Lord is perfect, refreshing the soul; <br />
+				the decree of the Lord is trustworthy, giving wisdom to the simple.
+				<br /><br />
+				<strong>Lord, you have the words of everlasting life.</strong>
+				<br /><br />
+				The precepts of the Lord are right, rejoicing the heart; <br />
+				the command of the Lord is clear, enlightening the eye.
+				<br /><br />
+				<strong>Lord, you have the words of everlasting life.</strong>
+				<br /><br />
+				The fear of the Lord is pure, enduring forever; <br />
+				the ordinances of the Lord are true, all of them just.
+				<br /><br />
+				<strong>Lord, you have the words of everlasting life.</strong>
+				<br /><br />
+				They are more precious than gold, than a heap of purest gold; <br />
+				sweeter also so than syrup or honey from the comb.
+				<br /><br />
+				<strong>Lord, you have the words of everlasting life.</strong>
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 23:1-3, 4, 5, 6
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>The Lord is my shepherd; there is nothing I shall want.</strong><br />
+				<em>or</em><br />
+				<strong>Though I walk in the valley of darkness, I fear no evil, for you are with me.</strong>
+				<br /><br />
+				The Lord is my shepherd; I shall not want.<br />
+				in verdant pastures he gives me repose;<br />
+				Beside restful waters he leads me;<br />
+				he refreshes my soul.<br />
+				He guides me in right paths for his name’s sake.
+				<br /><br />
+				<strong>The Lord is my shepherd; there is nothing I shall want.</strong><br />
+				<em>or</em><br />
+				<strong>Though I walk in the valley of darkness, I fear no evil, for you are with me.</strong>
+				<br /><br />
+				Even though I walk in the dark valley I fear no evil; <br />
+				for you are at my side,<br />
+				with your rod and your staff that give me courage.
+				<br /><br />
+				<strong>The Lord is my shepherd; there is nothing I shall want.</strong><br />
+				<em>or</em><br />
+				<strong>Though I walk in the valley of darkness, I fear no evil, for you are with me.</strong>
+				<br /><br />
+				You spread the table before me in the sight of my foes;<br />
+				You anoint my head with oil; my cup overflows.
+				<br /><br />
+				<strong>The Lord is my shepherd; there is nothing I shall want.</strong><br />
+				<em>or</em><br />
+				<strong>Though I walk in the valley of darkness, I fear no evil, for you are with me.</strong>
+				<br /><br />
+				Only goodness and kindness follow me all the days of my life.<br />
+				And I shall dwell in the house of the Lord for years to come.
+				<br /><br />
+				<strong>The Lord is my shepherd; there is nothing I shall want.</strong><br />
+				<em>or</em><br />
+				<strong>Though I walk in the valley of darkness, I fear no evil, for you are with me.</strong>
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 25:6 and 7b, 17-18, 20-21
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>To you, O Lord, I lift my soul.</strong><br />
+				<em>or</em><br />
+				<strong>No one who waits for you, O Lord, will ever be put to shame.</strong>
+				<br /><br />
+				Remember that your compassion, <br />
+				O Lord, and your kindness are from of old. <br />
+				In your kindness remember me, <br />
+				because of your goodness, O Lord.
+				<br /><br />
+				<strong>To you, O Lord, I lift my soul.</strong><br />
+				<em>or</em><br />
+				<strong>No one who waits for you, O Lord, will ever be put to shame.</strong>
+				<br /><br />
+				Relieve the troubles of my heart, <br />
+				and bring me out of my distress.<br />
+				Put an end to my affliction and my suffering;<br />
+				and take away all my sins.
+				<br /><br />
+				<strong>To you, O Lord, I lift my soul.</strong><br />
+				<em>or</em><br />
+				<strong>No one who waits for you, O Lord, will ever be put to shame.</strong>
+				<br /><br />
+				Preserve my life and rescue me;<br />
+				let me not be put to shame, for I take refuge in you.<br />
+				Let integrity and uprightness preserve me,<br />
+				because I wait for you, O Lord.
+				<br /><br />
+				<strong>To you, O Lord, I lift my soul.</strong><br />
+				<em>or</em><br />
+				<strong>No one who waits for you, O Lord, will ever be put to shame.</strong>
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 27: 4, 7, and 8b and 9a, 13-14
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>The Lord is my light and my salvation.</strong>
+				<em>or</em><br />
+				<strong>I believe that I shall see the good things of the Lord in the land of the living.</strong>
+				<br /><br />
+				The Lord is my light and my salvation; whom should I fear?<br />
+				The Lord is my life’s refuge; of whom should I be afraid?
+				<br /><br />
+				<strong>The Lord is my light and my salvation.</strong>
+				<em>or</em><br />
+				<strong>I believe that I shall see the good things of the Lord in the land of the living.</strong>
+				<br /><br />
+				One thing I ask of the Lord; this I seek:<br />
+				To dwell in the house of the Lord all the days of my life.<br />
+				That I may gaze on the loveliness of the Lord and contemplate his temple.
+				<br /><br />
+				<strong>The Lord is my light and my salvation.</strong>
+				<em>or</em><br />
+				<strong>I believe that I shall see the good things of the Lord in the land of the living.</strong>
+				<br /><br />
+				Hear, O Lord, the sound of my call; have pity on me, and answer me.<br />
+				Your presence, O Lord, I seek.  Hide not your face from me.
+				<br /><br />
+				<strong>The Lord is my light and my salvation.</strong>
+				<em>or</em><br />
+				<strong>I believe that I shall see the good things of the Lord in the land of the living.</strong>
+				<br /><br />
+				I believe that I shall see the bounty of the Lord in the land of the living.<br />
+				Wait for the Lord with courage; be stouthearted, and wait for the Lord.
+				<br /><br />
+				<strong>The Lord is my light and my salvation.</strong>
+				<em>or</em><br />
+				<strong>I believe that I shall see the good things of the Lord in the land of the living.</strong>
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 42:2-3, 5cdef; 43:3, 4, 5
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>My soul is thirsting for the living God:<br />
+				when shall I see him face to face?</strong>
+				<br /><br />
+				As the hind longs for the running waters,<br />
+				so my soul longs for you, O God.
+				<br /><br />
+				<strong>My soul is thirsting for the living God:<br />
+				when shall I see him face to face?</strong>
+				<br /><br />
+				Athirst is my soul for God, the living God.<br />
+				When shall I go and behold the face of God?
+				<br /><br />
+				<strong>My soul is thirsting for the living God:<br />
+				when shall I see him face to face?</strong>
+				<br /><br />
+				I went with the throng and led them in procession <br />
+				to the house of God.<br />
+				Amid loud cries of joy and thanksgiving, <br />
+				with the multitude keeping festival.
+				<br /><br />
+				<strong>My soul is thirsting for the living God:<br />
+				when shall I see him face to face?</strong>
+				<br /><br />
+				Send forth your light and your fidelity;<br />
+				they shall lead me on<br />
+				and bring me to your holy mountain, to your dwelling-place.
+				<br /><br />
+				<strong>My soul is thirsting for the living God:<br />
+				when shall I see him face to face?</strong>
+				<br /><br />
+				Then will I go in to the altar of God, <br />
+				the God of my gladness and joy;<br />
+				then will I give you thanks upon the harp,<br />
+				O God, my God!
+				<br /><br />
+				<strong>My soul is thirsting for the living God:<br />
+				when shall I see him face to face?</strong>
+				<br /><br />
+				Why are you so downcast, O my soul?<br />
+				Why do you sigh within me?<br />
+				Hope in God!  For I shall again be thanking him,<br />
+				in the presence of my savior and my God.
+				<br /><br />
+				<strong>My soul is thirsting for the living God:<br />
+				when shall I see him face to face?</strong>
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 63:2, 3-4, 5-6, 8-9
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>My soul is thirsting for you, O Lord my God.</strong>
+				<br /><br />
+				O God, you are my God whom I seek;<br />
+				for you my flesh pines and my soul thirst<br />
+				like the earth, parched, lifeless and without water.
+				<br /><br />
+				<strong>My soul is thirsting for you, O Lord my God.</strong>
+				<br /><br />
+				Thus have I gazed toward you in the sanctuary<br />
+				to see your power and your glory.<br />
+				For your kindness is greater good than life;<br />
+				my kips shall glorify you.
+				<br /><br />
+				<strong>My soul is thirsting for you, O Lord my God.</strong>
+				<br /><br />
+				Thus will I bless you while I live;<br />
+				lifting up my hands, I wall call upon your name.<br />
+				As with the riches of a banquet shall my should be satisfied<br />
+				and with exultant lips my mouth shall praise you.
+				<br /><br />
+				<strong>My soul is thirsting for you, O Lord my God.</strong>
+				<br /><br />
+				You are my help, 
+				and in the shadow of your wings I shout for joy.<br />
+				My should clings fast to you;<br />
+				your right hand upholds me.
+				<br /><br />
+				<strong>My soul is thirsting for you, O Lord my God.</strong>
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 103: 8 and 10; 13-14, 15-16, 17-18
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>The Lord is kind and merciful</strong><br />
+				<em>or</em><br />
+				<strong>The salvation of the just comes from the Lord.</strong>
+				<br /><br />
+				Merciful and gracious is the Lord,<br />
+				slow to anger, and abounding in kindness.<br />
+				Not according to our sins does he deal with us,<br />
+				nor does he requite us according to our crimes.
+				<br /><br />
+				<strong>The Lord is kind and merciful</strong><br />
+				<em>or</em><br />
+				<strong>The salvation of the just comes from the Lord.</strong>
+				<br /><br />
+				As a father has compassion on his children, <br />
+				so the Lord has compassion on those who fear him.<br />
+				For he knows how we are formed,<br />
+				he remembers that we are dust.
+				<br /><br />
+				<strong>The Lord is kind and merciful</strong><br />
+				<em>or</em><br />
+				<strong>The salvation of the just comes from the Lord.</strong>
+				<br /><br />
+				Man’s days are like those of grass;<br />
+				like a flower of the field he blooms;<br />
+				the wind sweeps over him and he is gone, <br />
+				and his place knows him no more.
+				<br /><br />
+				<strong>The Lord is kind and merciful</strong><br />
+				<em>or</em><br />
+				<strong>The salvation of the just comes from the Lord.</strong>
+				<br /><br />
+				But the kindness of the Lord is from eternity<br />
+				to eternity toward those who fear him,<br />
+				and his justice toward children’s children<br />
+				among those who keep his covenant<br />
+				and remember to fulfill his precepts.
+				<br /><br />
+				<strong>The Lord is kind and merciful</strong><br />
+				<em>or</em><br />
+				<strong>The salvation of the just comes from the Lord.</strong>
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 116:5, 6, 10-11, 15-16ac
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>I will walk in the presence of the Lord in the land of the living.</strong><br />
+				<em>or</em><br /> 
+				<strong>Alleluia!</strong>
+				<br /><br />
+				Gracious is the Lord and just; <br />
+				yes, our God is merciful.
+				<br /><br />
+				<strong>I will walk in the presence of the Lord in the land of the living.</strong><br />
+				<em>or</em><br /> 
+				<strong>Alleluia!</strong>
+				<br /><br />
+				The Lord keeps the little ones;<br />
+				I was brought low, and he saved me.
+				<br /><br />
+				<strong>I will walk in the presence of the Lord in the land of the living.</strong><br />
+				<em>or</em><br /> 
+				<strong>Alleluia!</strong>
+				<br /><br />
+				I believed, even when I said, “I am greatly afflicted”;<br />
+				I said in my alarm, “No man is dependable.”
+				<br /><br />
+				<strong>I will walk in the presence of the Lord in the land of the living.</strong><br />
+				<em>or</em><br /> 
+				<strong>Alleluia!</strong>
+				<br /><br />
+				Precious in the eyes of the Lord<br />
+				is the death of his faithful ones.<br />
+				O Lord, I am your servant, you have loosed my bonds.
+				<br /><br />
+				<strong>I will walk in the presence of the Lord in the land of the living.</strong><br />
+				<em>or</em><br /> 
+				<strong>Alleluia!</strong>
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 122:1-2, 4-5, 6-7, 8-9
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>I rejoiced when I heard them say: let us go to the house of the Lord.</strong><br />
+				<em>or</em><br />
+				<strong>Let us go rejoicing to the house of the Lord.</strong>
+				<br /><br />
+				I rejoiced because they said to me, <br />
+				“We will go up to the house of the Lord.”<br />
+				And now we have set foot <br />
+				within your gates, O Jerusalem.
+				<br /><br />
+				<strong>I rejoiced when I heard them say: let us go to the house of the Lord.</strong><br />
+				<em>or</em><br />
+				<strong>Let us go rejoicing to the house of the Lord.</strong>
+				<br /><br />
+				To it the tribes go up, the tribes of the Lord.<br />
+				According to the decree for Israel, to give thanks to the name of the Lord.<br />
+				In it are set up judgment seats, seats for the house of David.
+				<br /><br />
+				<strong>I rejoiced when I heard them say: let us go to the house of the Lord.</strong><br />
+				<em>or</em><br />
+				<strong>Let us go rejoicing to the house of the Lord.</strong>
+				<br /><br />
+				Pray for the peace of Jerusalem!<br />
+				May those who love you prosper!<br />
+				May peace be within your walls, <br />
+				prosperity in your buildings.
+				<br /><br />
+				<strong>I rejoiced when I heard them say: let us go to the house of the Lord.</strong><br />
+				<em>or</em><br />
+				<strong>Let us go rejoicing to the house of the Lord.</strong>
+				<br /><br />
+				Because of my relatives and friends <br />
+				I will say, “Peace be within you!”<br />
+				Because of the house of the Lord, our God,<br />
+				I will pray for your good.
+				<br /><br />
+				<strong>I rejoiced when I heard them say: let us go to the house of the Lord.</strong><br />
+				<em>or</em><br />
+				<strong>Let us go rejoicing to the house of the Lord.</strong>
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 130: 1-2, 3-4, 5-6ab, 6c-7, 8
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>Out of the depths, I cry to you, Lord.</strong><br />
+				<em>or</em><br />
+				<strong>I hope in the Lord, I trust in his word.</strong>
+				<br /><br />
+				Out the depths, I cry to you, O Lord; Lordy, hear my voice!<br />
+				Let your ears be attentive to my voice in supplication.
+				<strong>Out of the depths, I cry to you, Lord.</strong><br />
+				<em>or</em><br />
+				<strong>I hope in the Lord, I trust in his word.</strong>
+				<br /><br />
+				If you, O Lord, mark iniquities, Lord, who can stand? <br />
+				But with you is forgiveness, that you may be revered.
+				<br /><br />
+				<strong>Out of the depths, I cry to you, Lord.</strong><br />
+				<em>or</em><br />
+				<strong>I hope in the Lord, I trust in his word.</strong>
+				<br /><br />
+				I trust in the Lord; my soul trusts in his word. <br />
+				My soul waits for the Lord more than the sentinels wait for the dawn.
+				<br /><br />
+				<strong>Out of the depths, I cry to you, Lord.</strong><br />
+				<em>or</em><br />
+				<strong>I hope in the Lord, I trust in his word.</strong>
+				<br /><br />
+				More than the sentinels wait for the dawn, let Israel wait for the Lord.  <br />
+				For with the Lord is kindness and with him is plenteous redemption.
+				<br /><br />
+				<strong>Out of the depths, I cry to you, Lord.</strong><br />
+				<em>or</em><br />
+				<strong>I hope in the Lord, I trust in his word.</strong>
+				<br /><br />
+				And he will redeem Israel from all their iniquities.
+				<br /><br />
+				<strong>Out of the depths, I cry to you, Lord.</strong><br />
+				<em>or</em><br />
+				<strong>I hope in the Lord, I trust in his word.</strong>
+
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 143: 1-2, 5-6, 7ab, 8ab, 10
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>O Lord, hear my prayer.</strong>
+				<br /><br />
+				O Lord, hear my prayer; <br />
+				hearken to my pleading in your faithfulness; <br />
+				in your justice answer me. <br />
+				And enter not into judgment with your servant, <br />
+				for before you no living man is just.
+				<br /><br />
+				<strong>O Lord, hear my prayer.</strong>
+				<br /><br />
+				I remember the days of old; <br />
+				I meditate on all your doings; <br />
+				the works of your hands I ponder.  <br />
+				I stretch out my hands to you; <br />
+				my soul thirsts for you like parched land.
+				<br /><br />
+				<strong>O Lord, hear my prayer.</strong>
+				<br /><br />
+				Hasten to answer me, O Lord; <br />
+				for my spirit fails me. <br />
+				At dawn let me hear of your mercy, <br />
+				for in you I trust.
+				<br /><br />
+				<strong>O Lord, hear my prayer.</strong>
+				<br /><br />
+				Teach me to do your will, <br />
+				for you are my God.  <br />
+				May your good spirit guide me on level ground.
+				<br /><br />
+				<strong>O Lord, hear my prayer.</strong>
+				<br /><br />
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12 lead">
+				Psalm 145:1-2, 8-9, 10-11, 13, 14
+			</div>
+			<div class="clearer"></div>
+			<div class="col-xs-12">
+				<strong>I will praise your name for ever, my king and my God.</strong>
+				<br /><br />
+				I will extol you, O my God and King, <br />
+				and I will bless your name forever and ever.<br />
+				Every day will I bless you, <br />
+				and I will praise your name forever and ever.
+				<br /><br />
+				<strong>I will praise your name for ever, my king and my God.</strong>
+				<br /><br />
+				The Lord is gracious and merciful, <br />
+				slow to anger and of great kindness.<br />
+				The Lord is good to all <br />
+				and compassionate toward all his works.
+				<br /><br />
+				<strong>I will praise your name for ever, my king and my God.</strong>
+				<br /><br />
+				Let all your works give you thanks, O Lord, <br />
+				and let your faithful ones bless you.<br />
+				Let them discourse of the glory of your kingdom<br />
+				and speak of your might.
+				<br /><br />
+				<strong>I will praise your name for ever, my king and my God.</strong>
+				<br /><br />
+				The Lord is faithful in all his words <br />
+				and holy in all his works.  <br />
+				The Lord lifts up all who are falling <br />
+				and raises up all who are bowed down.
+				<br /><br />
+				<strong>I will praise your name for ever, my king and my God.</strong>
+			</div>
+		</div>-->
+		<footer class="footer" style="margin-top:20px;">
+			<div class="row">
+				<div class="col-xs-12"><img data-src="holder.js/1140x150" src="/images/heros/OLMC_0289a.JPG" class="img-rounded img-responsive"></div>
+			</div>
+	      	<div class="container">
+	        	<p class="text-muted" style="text-align:center;">&copy; 2015</p>
+	      	</div>
+    	</footer>
+	</div>
+
+    <!-- Modules -->
+    <script src="/angular/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="/angular/controllers/MainController.js"></script>
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
+
+	<script type="text/javascript">
+		
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-22789078-1']);
+		_gaq.push(['_trackPageview']);
+		
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+		
+	</script>
+</body>
+</html>
