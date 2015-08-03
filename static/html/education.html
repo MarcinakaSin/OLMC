@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xml:lang="en" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Our Lady Mother of the Church | Bulletin</title>
+	<title>Our Lady Mother of the Church | Religious Education</title>
 	<meta name="author" content="Our Lady Mother of the Church" />
     <link href="styles/custom2015.css" rel="stylesheet">
-
 
     <!-- Bootstrap -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
@@ -19,18 +18,10 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
-	<style type="text/css">
-		{{range .}}
-		
-		@media screen and (-webkit-min-device-pixel-ratio: 2) {
-			#b{{.Identifier}} {
-				content: url('/serve?key={{.Thumbnail2xKey}}&type=png');
-			}
-		}
-		
-		{{end}}
-	</style>
+
+
+    <!-- AngularJS -->
+    <script src="/angular/angular-v1.3.16.min.js"></script>
 </head>
 <body>
     <!-- Fixed navbar -->
@@ -78,12 +69,30 @@
 			<h2>Religious Education</h2>
 			<!--<p class="lead">Details Coming Soon</p>-->
 		</div>
+
 		<style type="text/css">
 			h3,
 			h4 {
 				color:#337AB7;
 			}
 		</style>
+
+		<div class="row">
+			<div>
+			    <div class="page-header text-center">
+					<h3>Mission Statement</h3>
+					<p>Coming Soon</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div>
+			    <div class="page-header text-center">
+					<h3>Information and Registration</h3>
+				</div>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-xs-7">
 				<h3 class="text-center"><strong>OFFICE OF RELIGIOUS EDUCATION</strong></h3>
@@ -150,6 +159,32 @@
 				8747 W. Lawrence Ave. Chicago, IL 60656
 		    </div>
 		</div>
+		<div class="row">
+			<div class="col-sm-12">
+			    <div class="page-header text-center">
+					<h3>RE Program Calendar</h3>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+	    	<div class="col-xs-12 text-center">
+				<h4>Our Lady, Mother of the Church</h4>
+				Religious Ed Schedule<br />
+				2015-2016
+			</div>
+	    	<div class="col-xs-12">
+				N.B. Classes begin from 9:30am until 12:00nn unless stated otherwise. Please come ahead of time. If you are not able to attend the classes for any reason, please inform the DRE. Your child’s safety and protection is our priority.
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-xs-12" ng-app="pdfInfo">
+			    <table class="table table-striped" ng-controller="MainController">
+		            <tr ng-repeat="educationevent in educationevents">
+		                <td>{{ educationevent.date }}</td>
+						<td>{{ educationevent.activity }}</td>
+						<td>{{ educationevent.location }}</td>
+		            </tr>
+				</table>
+			</div>
+		</div>
 
 
 
@@ -169,6 +204,13 @@
 	      	</div>
     	</footer>
 	</div>
+
+    <!-- Modules -->
+    <script src="/angular/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="/angular/controllers/MainController.js"></script>
+
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

@@ -237,27 +237,213 @@ app.controller('MainController', ['$scope', function($scope) {
       reference: '145'
     }
   ]; 
-      
-      
-  
-  /*$scope.shutterbugg = {
-    icon: 'img/shutterbugg.jpg',
-    title: 'Shutterbugg',
-    developer: 'Chico Dusty',
-    price: 2.99
-  };
 
-  $scope.gameboard = {
-    icon: 'img/gameboard.jpg',
-    title: 'Gameboard',
-    developer: 'Armando P.',
-    price: 1.99
-  };
-
-  $scope.forecast = {
-    icon: 'img/forecast.jpg',
-    title: 'Forecast',
-    developer: 'Forecast',
-    price: 1.99
-  };*/
+//  Calendar section for Religeous Education
+  $scope.educationevents = [
+    {
+      date: 'August 29',
+      activity: 'Catechist Retreat/Training',
+      location: 'Hayes Center, 9am-12nn'
+    },
+    {
+      date: 'September 16',
+      activity: 'Confirmation parent meeting',
+      location: 'Hayes Center, 7:00 p.m.'
+    },
+    {
+      date: 'September 20',
+      activity: 'Catechetical Sunday',
+      location: '11:00 mass'
+    },
+    {
+      date: 'September 23',
+      activity: 'Catechist meeting',
+      location: 'RE Office, 7:00 p.m.'
+    },
+    {
+      date: 'September 26',
+      activity: 'First RE session/mass, open house and hot dogs',
+      location: 'Church and Hayes Center'
+    },
+    {
+      date: 'October 3',
+      activity: 'RE Session and pet blessing at 12:10',
+      location: 'Hayes Center'
+    },
+    {
+      date: 'October 7',
+      activity: 'First Reconciliation Parent Meeting',
+      location: 'Hayes Center, 7:00 p.m.'
+    },
+    {
+      date: 'October 10',
+      activity: 'RE Session',
+      location: 'Hayes Center'
+    },
+    {
+      date: 'October 23-24',
+      activity: 'Set up and Boo-Ingo',
+      location: 'Hayes Center (Boo-Ingo 6 p.m.)'
+    },
+    {
+      date: 'October 25',
+      activity: 'Confirmation Enrollment Mass',
+      location: '11:00 mass'
+    },
+    {
+      date: 'November 4',
+      activity: 'Catechist meeting',
+      location: 'RE Office, 7:00 p.m.'
+    },
+    {
+      date: 'November 7',
+      activity: 'RE session',
+      location: 'Hayes Center'
+    },
+    {
+      date: 'November 13-14',
+      activity: 'Chicago Catechetical Conference',
+      location: 'Offsite'
+    },
+    {
+      date: 'November 14',
+      activity: 'RE session and mass at 11:00',
+      location: 'Church and Hayes Center'
+    },
+    {
+      date: 'December 2',
+      activity: 'Catechist meeting',
+      location: 'RE Office, 7:00 p.m.'
+    },
+    {
+      date: 'December 5',
+      activity: 'RE session and First Reconciliation Day',
+      location: 'Hayes Center (Church 11:00)'
+    },
+    {
+      date: 'December 19',
+      activity: 'Catechist Christmas Party',
+      location: 'Hayes Center 6:00 p.m.'
+    },
+    {
+      date: 'December 12',
+      activity: 'RE session and Posadas',
+      location: 'Hayes Center'
+    },
+    {
+      date: 'January 6',
+      activity: 'Catechist meeting',
+      location: 'RE Office, 7:00 p.m.'
+    },
+    {
+      date: 'January 9',
+      activity: 'RE session and Epiphany Play',
+      location: 'Hayes Center '
+    },
+    {
+      date: 'January 16',
+      activity: 'RE session/Safe Environment Training First Communion Parent Meeting',
+      location: 'Hayes Center (parents at 11:00)'
+    },
+    {
+      date: 'February 3',
+      activity: 'Catechist meeting',
+      location: 'RE Office, 7:00 p.m.'
+    },
+    {
+      date: 'February 6',
+      activity: 'RE session',
+      location: 'Hayes Center'
+    },
+    {
+      date: 'February 13',
+      activity: 'RE session and mass at 11:00',
+      location: 'Church and Hayes Center'
+    },
+    {
+      date: 'February 27',
+      activity: 'First Communion workshop',
+      location: 'Hayes Center'
+    },
+    {
+      date: 'March 2',
+      activity: 'Catechist meeting',
+      location: 'RE Office, 7:00 p.m.'
+    },
+    {
+      date: 'March 5',
+      activity: 'RE session and Candidate-Sponsor Day for confirmandi',
+      location: 'Hayes Center'
+    },
+    {
+      date: 'March 12',
+      activity: 'RE session and mass at 11:00',
+      location: 'Church and Hayes Center'
+    },
+    {
+      date: 'March 19-20',
+      activity: 'Setup and Easter Egg Hunt',
+      location: 'Hayes Center (Egg Hunt 12 noon)'
+    },
+    {
+      date: 'March 30',
+      activity: 'Catechist meeting',
+      location: 'RE Office, 7:00 p.m.'
+    },
+    {
+      date: 'April 2',
+      activity: 'RE session/confirmandi to Central Baptist Village',
+      location: 'Hayes Center'
+    },
+    {
+      date: 'April 3',
+      activity: 'First Communion presentation mass',
+      location: '11:00 mass'
+    },
+    {
+      date: 'April 5',
+      activity: 'First Communion Treasure Hunt',
+      location: 'Church, 6:30 p.m.'
+    },
+    {
+      date: 'April 6',
+      activity: 'First Communion Rehearsal',
+      location: 'Church, 6:30 p.m.'
+    },
+    {
+      date: 'April 9',
+      activity: 'Last RE session of the year—mass or paraliturgy at 11:00 Catechist Recognition Day',
+      location: 'Church and Hayes Center'
+    },
+    {
+      date: 'April 14',
+      activity: 'First Communion Rehearsal',
+      location: 'Church'
+    },
+    {
+      date: 'April 16',
+      activity: 'First Communion Day, 12:00 noon',
+      location: 'Church'
+    },
+    {
+      date: 'April 17',
+      activity: '“Second Communion Day”',
+      location: '11:00 mass'
+    },
+    {
+      date: 'May 1',
+      activity: 'May Crowning',
+      location: '11:00 mass'
+    },
+    {
+      date: 'May 10',
+      activity: 'Confirmation rehearsal, 6:30 p.m.',
+      location: 'Church'
+    },
+    {
+      date: 'May 12',
+      activity: 'Confirmation, 7:30 p.m.',
+      location: 'Church and Hayes Center'
+    }
+  ]; 
 }]);
