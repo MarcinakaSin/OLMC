@@ -1,5 +1,5 @@
 application: olmcdev
-version: 2-3
+version: 2-7
 runtime: go
 api_version: go1
 
@@ -10,33 +10,46 @@ handlers:
 - url: /contact
   static_files: static/html/contact.html
   upload: static/html/contact.html
-- url: /education
-  static_files: static/html/education.html
-  upload: static/html/education.html
-- url: /funerals
-  static_files: static/html/funerals.html
-  upload: static/html/funerals.html
-- url: /hymn
-  static_files: static/html/hymn.html
-  upload: static/html/hymn.html
-- url: /newtestament
-  static_files: static/html/newtestament.html
-  upload: static/html/newtestament.html
-- url: /oldtestament
-  static_files: static/html/oldtestament.html
-  upload: static/html/oldtestament.html
-- url: /prayer
-  static_files: static/html/prayer.html
-  upload: static/html/prayer.html
-- url: /responsorial
-  static_files: static/html/responsorial.html
-  upload: static/html/responsorial.html
 - url: /staff
   static_files: static/html/staff.html
   upload: static/html/staff.html
 - url: /times
   static_files: static/html/times.html
   upload: static/html/times.html
+
+##  Education Sections
+- url: /education
+  static_files: static/html/education/education.html
+  upload: static/html/education/education.html
+- url: /mission
+  static_files: static/html/education/mission.html
+  upload: static/html/education/mission.html
+- url: /information
+  static_files: static/html/education/information.html
+  upload: static/html/education/information.html
+- url: /edu-calendar
+  static_files: static/html/education/calendar.html
+  upload: static/html/education/calendar.html
+- url: /sacrament
+  static_files: static/html/education/sacrament.html
+  upload: static/html/education/sacrament.html
+
+##  Worship Sections
+- url: /funerals
+  static_files: static/html/worship/funerals.html
+  upload: static/html/worship/funerals.html
+- url: /newtestament
+  static_files: static/html/worship/newtestament.html
+  upload: static/html/worship/newtestament.html
+- url: /oldtestament
+  static_files: static/html/worship/oldtestament.html
+  upload: static/html/worship/oldtestament.html
+- url: /responsorial
+  static_files: static/html/worship/responsorial.html
+  upload: static/html/worship/responsorial.html
+
+
+##  Directories
 - url: /images
   static_dir: static/images
 - url: /scripts
@@ -49,6 +62,8 @@ handlers:
   static_dir: static/pdf
 - url: /styles
   static_dir: static/styles
+
+
 - url: /sitemap.xml
   static_files: static/sitemap.xml
   upload: static/sitemap.xml

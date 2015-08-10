@@ -19,9 +19,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-    <!-- AngularJS -->
-    <script src="/angular/angular-v1.3.16.min.js"></script>
 </head>
 <body>
     <!-- Fixed navbar -->
@@ -41,14 +38,24 @@
 			<li><a href="/">Welcome</a></li>
 			<li><a href="/times">Mass Times</a></li>
 			<li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Worship<span class="caret"></span></a>
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Worship <span class="caret"></span></a>
 	            <ul class="dropdown-menu" role="menu">
 	              <li><a href="/funerals">Funerals</a></li>
 	              <!--<li class="divider"></li>-->
 	            </ul>
 	        </li>
 			<li><a href="/bulletin">Bulletin</a></li>
-			<li class="active"><a href="/education">Religious Education</a></li>
+
+			<li class="dropdown active">
+				<a href="/education" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Religious Education <span class="caret"></span></a>
+	            <ul class="dropdown-menu" role="menu">
+	              <li><a href="/mission">Mission Statement</a></li>
+	              <li><a href="/information">Information and Registration</a></li>
+	              <li><a href="/edu-calendar">RE Program Calendar</a></li>
+	              <li><a href="/sacrament">Sacramental Preparation Process</a></li>
+	              <!--<li class="divider"></li>-->
+	            </ul>
+			</li>
 			<li><a href="/staff">Staff</a></li>
 			<li><a href="/contact">Contact</a></li>
 			<li><a href="/about">About</a></li>
@@ -76,22 +83,6 @@
 				color:#337AB7;
 			}
 		</style>
-
-		<div class="row">
-			<div>
-			    <div class="page-header text-center">
-					<h3>Mission Statement</h3>
-					<p>Coming Soon</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div>
-			    <div class="page-header text-center">
-					<h3>Information and Registration</h3>
-				</div>
-			</div>
-		</div>
 
 		<div class="row">
 			<div class="col-xs-7">
@@ -159,40 +150,6 @@
 				8747 W. Lawrence Ave. Chicago, IL 60656
 		    </div>
 		</div>
-		<div class="row">
-			<div class="col-sm-12">
-			    <div class="page-header text-center">
-					<h3>RE Program Calendar</h3>
-				</div>
-			</div>
-			<div style="clear:both;"></div>
-	    	<div class="col-xs-12 text-center">
-				<h4>Our Lady, Mother of the Church</h4>
-				Religious Ed Schedule<br />
-				2015-2016
-			</div>
-	    	<div class="col-xs-12">
-				N.B. Classes begin from 9:30am until 12:00nn unless stated otherwise. Please come ahead of time. If you are not able to attend the classes for any reason, please inform the DRE. Your child’s safety and protection is our priority.
-			</div>
-			<div style="clear:both;"></div>
-			<div class="col-xs-12" ng-app="pdfInfo">
-			    <table class="table table-striped" ng-controller="MainController">
-		            <tr ng-repeat="educationevent in educationevents">
-		                <td>{{ educationevent.date }}</td>
-						<td>{{ educationevent.activity }}</td>
-						<td>{{ educationevent.location }}</td>
-		            </tr>
-				</table>
-			</div>
-		</div>
-
-
-
-
-
-
-
-
 
 
 		<footer class="footer" style="margin-top:20px;">
@@ -204,12 +161,6 @@
 	      	</div>
     	</footer>
 	</div>
-
-    <!-- Modules -->
-    <script src="/angular/app.js"></script>
-
-    <!-- Controllers -->
-    <script src="/angular/controllers/MainController.js"></script>
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
