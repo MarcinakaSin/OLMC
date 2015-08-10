@@ -25,8 +25,8 @@ handlers:
   static_files: static/html/education/mission.html
   upload: static/html/education/mission.html
 - url: /information
-  static_files: static/html/education/information.html
-  upload: static/html/education/information.html
+  static_files: static/html/education/education.html
+  upload: static/html/education/education.html
 - url: /edu-calendar
   static_files: static/html/education/calendar.html
   upload: static/html/education/calendar.html
