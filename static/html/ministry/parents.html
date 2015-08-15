@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Our Lady Mother of the Church | Religious Education</title>
+	<title>Our Lady Mother of the Church | Parents Ministry</title>
 	<meta name="author" content="Our Lady Mother of the Church" />
 
     <!-- Bootstrap -->
@@ -19,11 +19,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
-    <!-- AngularJS -->
-    <script src="/angular/angular-v1.3.16.min.js"></script>
 </head>
+
 <body>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -42,20 +39,19 @@
 			<li><a href="/">Welcome</a></li>
 			<li><a href="/times">Mass Times</a></li>
 			<li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Worship <span class="caret"></span></a>
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Worship<span class="caret"></span></a>
 	            <ul class="dropdown-menu" role="menu">
 	              <li><a href="/funerals">Funerals</a></li>
 	              <!--<li class="divider"></li>-->
 	            </ul>
 	        </li>
 			<li><a href="/bulletin">Bulletin</a></li>
-
-			<li class="dropdown active">
+			<li class="dropdown">
 				<a href="/education" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Religious Education <span class="caret"></span></a>
 	            <ul class="dropdown-menu" role="menu">
 	              <li><a href="/mission">Mission Statement</a></li>
 	              <li><a href="/education">Information and Registration</a></li>
-	              <li class="active"><a href="/edu-calendar">RE Program Calendar</a></li>
+	              <li><a href="/edu-calendar">RE Program Calendar</a></li>
 	              <li><a href="/sacrament">Sacramental Preparation Process</a></li>
 	              <!--<li class="divider"></li>-->
 	            </ul>
@@ -65,7 +61,7 @@
 	            <ul class="dropdown-menu" role="menu">
 	              <li><a href="/youth">Youth Ministry</a></li>
 	              <li><a href="/young-adults">Young Adults Ministry</a></li>
-	              <li><a href="/parents">Parents Ministry</a></li>
+	              <li class="active"><a href="/parents">Parents Ministry</a></li>
 	              <li><a href="/RCIA">RCIA</a></li>
 	              <li><a href="/spiritual-direction">Spiritual Direction</a></li>
 	              <!--<li class="divider"></li>-->
@@ -73,7 +69,7 @@
 			</li>
 			<li><a href="/staff">Staff</a></li>
 			<li><a href="/contact">Contact</a></li>
-			<li><a href="/about">About</a></li>
+			<li ><a href="/about">About</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://connectnow.parishsoft.com/Chicago/Default.aspx" target="_blank">ConnectNow</a></li>
@@ -85,42 +81,44 @@
 		 <!-- Begin page content -->
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-md-6 col-md-offset-3"><img data-src="holder.js/1140x500" src="/images/heros/OLMC_0399.jpg" class="img-rounded img-responsive"></div>
+			<div class="col-xs-12 col-md-6 col-md-offset-3"><img data-src="holder.js/1140x500" src="/min-content/Parents_Faith_Formation_Heading.JPG" class="img-rounded img-responsive"></div>
 		</div>
 	    <div class="page-header">
-			<h2>Religious Education Program Calendar</h2>
-			<!--<p class="lead">Details Coming Soon</p>-->
-		</div>
-		<div class="row">
-	    	<div class="col-xs-12 text-center">
-				<h4>Our Lady, Mother of the Church</h4>
-				Religious Ed Schedule<br />
-				2015-2016
-			</div>
-	    	<div class="col-xs-12">
-				N.B. Classes begin from 9:30am until 12:00nn unless stated otherwise. Please come ahead of time. If you are not able to attend the classes for any reason, please inform the DRE. Your child’s safety and protection is our priority.
-			</div>
-			<div style="clear:both;"></div>
-			<div class="col-xs-12" ng-app="pdfInfo">
-			    <table class="table table-striped" ng-controller="MainController">
-		            <tr ng-repeat="educationevent in educationevents">
-		                <td>{{ educationevent.date }}</td>
-						<td>{{ educationevent.activity }}</td>
-						<td>{{ educationevent.location }}</td>
-		            </tr>
-				</table>
-			</div>
-		</div>
+	        <h2>Parents Ministry</h2>
+	    </div>
+		<h3 class="text-center"><strong>Enabling Catholic Parents to be primary educators <br />
+		of their children in the Faith</strong></h3>
 
-
-
-
-
-
-
-
-
-
+		<h4>Mission Statement:</h4>
+		<p>	
+			To assist parents in their hope to establish the faith of their children by reflecting with them some real facts and circumstances and practical ways to practice the Catholic faith in their home.
+			<br /><br />
+			To strengthen and nourish the lived-experiences of parents as they discover their role in the faith formation of their children by building a strong moral and spiritual foundation.
+			<br /><br />
+			To increase knowledge of religious fundamentals and inspire the growth of sacramental awareness.
+			<br /><br />
+			To deepen the relationship between parents and children in their relationship with one another and with God.
+		</p>
+		<h4>Faith Formation of Parents:</h4>
+		<p>
+			The parish of Our Lady, Mother of the Church views parent’s faith formation as a personal spiritual development that allows each parent to encounter their children with dignity, integrity, compassion and love through the examples of Christ Jesus. The Faith Formation program exists to assist parents in their responsibility of forming their children in the Catholic faith into which they have been baptized.
+		</p>
+		<p class="text-center">
+			<strong>“Parents have the first responsibility for the education of their children<br />
+			in the faith, prayer, and all virtues. They have the duty to<br />
+			provide as far as possible for the physical and<br />
+			spiritual needs of their children.”</strong><br />
+			Catechism of the Catholic Church, 543, 2252
+		</p>
+		<p>
+			Every parent, whether their children attend the RE program or not, is encouraged to attend the parent’s faith formation. While the children are learning the faith, the parents also discern and reflect their role as primary educators of their children in the faith.
+		</p>
+		<h4>Schedule:</h4>
+		<p>
+			Sessions will begin in September 26, 2015, Saturday at 10:00 AM. Meetings will be held every 1<sup>st</sup> and 3<sup>rd</sup> Saturday of each month.
+			<br /><br />
+			If you have further inquiries about the parent’s faith formation program, please contact Dr. Glenn Bisquera at 773.625.2273 or email at <a href="mailto:dre.olmc@gmail.com?subject=Our Lady Mother Church - Parents Ministry" target="_new">dre.olmc@gmail.com</a>.  
+		</p>
 		<footer class="footer" style="margin-top:20px;">
 			<div class="row">
 				<div class="col-xs-12"><img data-src="holder.js/1140x150" src="/images/heros/OLMC_0289a.JPG" class="img-rounded img-responsive"></div>
@@ -130,19 +128,13 @@
 	      	</div>
     	</footer>
 	</div>
-
-    <!-- Modules -->
-    <script src="/angular/app.js"></script>
-
-    <!-- Controllers -->
-    <script src="/angular/controllers/MainController.js"></script>
-
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
-	
+
+
 	<script type="text/javascript">
 		
 		var _gaq = _gaq || [];

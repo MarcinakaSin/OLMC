@@ -1,5 +1,5 @@
 application: olmcdev
-version: 2-7
+version: 2-8
 runtime: go
 api_version: go1
 
@@ -24,9 +24,6 @@ handlers:
 - url: /mission
   static_files: static/html/education/mission.html
   upload: static/html/education/mission.html
-- url: /information
-  static_files: static/html/education/education.html
-  upload: static/html/education/education.html
 - url: /edu-calendar
   static_files: static/html/education/calendar.html
   upload: static/html/education/calendar.html
@@ -47,6 +44,26 @@ handlers:
 - url: /responsorial
   static_files: static/html/worship/responsorial.html
   upload: static/html/worship/responsorial.html
+
+##  Ministry Sections
+- url: /youth
+  static_files: static/html/ministry/youth.html
+  upload: static/html/ministry/youth.html
+- url: /young-adults
+  static_files: static/html/ministry/young-adults.html
+  upload: static/html/ministry/young-adults.html
+- url: /parents
+  static_files: static/html/ministry/parents.html
+  upload: static/html/ministry/parents.html
+- url: /RCIA
+  static_files: static/html/ministry/RCIA.html
+  upload: static/html/ministry/RCIA.html
+- url: /spiritual-direction
+  static_files: static/html/ministry/spiritual-direction.html
+  upload: static/html/ministry/spiritual-direction.html
+##  Ministry Directories
+- url: /min-content
+  static_dir: static/html/ministry/content
 
 
 ##  Directories

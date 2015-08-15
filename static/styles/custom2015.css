@@ -1,4 +1,7 @@
-
+h3,
+h4 {
+    color:#337AB7;
+}
 /* Retina assets */
 
 #welcome_hero {
@@ -129,5 +132,4 @@ table#times {
 .bulletin a:hover img {
     box-shadow: 0 0 6px #4d688c;
 }
-.bulletin.last {
-    
+

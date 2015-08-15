@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Our Lady Mother of the Church | Religious Education</title>
+	<title>Our Lady Mother of the Church | RCIA</title>
 	<meta name="author" content="Our Lady Mother of the Church" />
 
     <!-- Bootstrap -->
@@ -19,11 +19,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
-    <!-- AngularJS -->
-    <script src="/angular/angular-v1.3.16.min.js"></script>
 </head>
+
 <body>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -49,13 +46,12 @@
 	            </ul>
 	        </li>
 			<li><a href="/bulletin">Bulletin</a></li>
-
-			<li class="dropdown active">
+			<li class="dropdown">
 				<a href="/education" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Religious Education <span class="caret"></span></a>
 	            <ul class="dropdown-menu" role="menu">
 	              <li><a href="/mission">Mission Statement</a></li>
 	              <li><a href="/education">Information and Registration</a></li>
-	              <li class="active"><a href="/edu-calendar">RE Program Calendar</a></li>
+	              <li><a href="/edu-calendar">RE Program Calendar</a></li>
 	              <li><a href="/sacrament">Sacramental Preparation Process</a></li>
 	              <!--<li class="divider"></li>-->
 	            </ul>
@@ -66,14 +62,14 @@
 	              <li><a href="/youth">Youth Ministry</a></li>
 	              <li><a href="/young-adults">Young Adults Ministry</a></li>
 	              <li><a href="/parents">Parents Ministry</a></li>
-	              <li><a href="/RCIA">RCIA</a></li>
+	              <li class="active"><a href="/RCIA">RCIA</a></li>
 	              <li><a href="/spiritual-direction">Spiritual Direction</a></li>
 	              <!--<li class="divider"></li>-->
 	            </ul>
 			</li>
 			<li><a href="/staff">Staff</a></li>
 			<li><a href="/contact">Contact</a></li>
-			<li><a href="/about">About</a></li>
+			<li ><a href="/about">About</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://connectnow.parishsoft.com/Chicago/Default.aspx" target="_blank">ConnectNow</a></li>
@@ -85,41 +81,50 @@
 		 <!-- Begin page content -->
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-md-6 col-md-offset-3"><img data-src="holder.js/1140x500" src="/images/heros/OLMC_0399.jpg" class="img-rounded img-responsive"></div>
+			<div class="col-xs-12 col-md-6 col-md-offset-3"><img data-src="holder.js/1140x500" src="/min-content/RCIA_Heading.JPG" class="img-rounded img-responsive"></div>
 		</div>
 	    <div class="page-header">
-			<h2>Religious Education Program Calendar</h2>
-			<!--<p class="lead">Details Coming Soon</p>-->
-		</div>
-		<div class="row">
-	    	<div class="col-xs-12 text-center">
-				<h4>Our Lady, Mother of the Church</h4>
-				Religious Ed Schedule<br />
-				2015-2016
-			</div>
-	    	<div class="col-xs-12">
-				N.B. Classes begin from 9:30am until 12:00nn unless stated otherwise. Please come ahead of time. If you are not able to attend the classes for any reason, please inform the DRE. Your child’s safety and protection is our priority.
-			</div>
-			<div style="clear:both;"></div>
-			<div class="col-xs-12" ng-app="pdfInfo">
-			    <table class="table table-striped" ng-controller="MainController">
-		            <tr ng-repeat="educationevent in educationevents">
-		                <td>{{ educationevent.date }}</td>
-						<td>{{ educationevent.activity }}</td>
-						<td>{{ educationevent.location }}</td>
-		            </tr>
-				</table>
-			</div>
-		</div>
-
-
-
-
-
-
-
-
-
+	        <h2>RCIA</h2>
+	    </div>
+	    <div class="row">
+	    	<h3 class="text-center">
+				Is God calling you to become Catholic?
+			</h3>
+			<p class="text-center">
+				<strong>It begins with an awareness … or stirring in one’s heart for something more. It could be a curiosity or a sense of longing for fulfillment. Maybe it’s God calling you to explore the life of faith, hope and love within the community of the Catholic Church.</strong>
+			</p>
+			<p class="text-center">
+				The Catholic Church always welcomes new members into its community. The Rite of Christian Initiation of Adults (RCIA) is the liturgical process in which interested adults may explore Catholicism over time in a friendly, relaxed environment and eventually join the family of the Catholic faith.
+			</p>
+			<h4>The RCIA is for three groups of people:</h4>
+			<ol>
+				<li>Those who are not baptized.</li>
+				<li>Those who were baptized into another Christian denomination and wish to enter into full communion with the Catholic Church.</li>
+				<li>Baptized Catholics who were never formed in the Catholic faith and have not completed their initiation; that is, who have received neither of the sacraments of Confirmation and Eucharist.</li>
+			</ol>
+			<h4>How does the RCIA work?</h4>
+			<p>
+				RCIA consists of four periods of formation which are marked by rituals that celebrate what has been completed and call a person into the next phase. There is no specific length of time for each period. The RCIA is a journey that "takes as long as it takes," according to each individual. The stages and rituals are as follows:
+			</p>
+			<ol>
+				<li>The Inquiry or Precatechumenate</li>
+				<li>The Catechumenate</li>
+				<li>The Lenten period of Purification and Enlightenment</li>
+				<li>Mystagogy or a time of deeper understanding of the “mysteries”</li>
+			</ol>
+			<h4>RCIA has several aspects</h4>
+			<p>
+				<strong>Spiritual</strong> – candidates attend part of Sunday Mass as a group each week. They learn new ways of praying, and they look into themselves to discover what God is saying to them now.
+				<br /><br />
+				<strong>Educational</strong> – candidates learn what the Catholic Church believes about God, about Jesus, about the Bible, and about what the Church teaches.
+				<br /><br />
+				<strong>Community</strong> – candidates are encouraged to be part of the parish and to attend parish events and celebrations. Their sponsors are representatives of the parish community.
+				<br /><br />
+				<strong>Service</strong> – In the Bible, Jesus directs us to “love your neighbor as yourself”, and lets us know that “whatever you do for the least of my brothers, you do for me.” Following Jesus, RCIA asks each candidate to contribute 2.5 hours of service to the needy between October and March by helping to serve dinner at Catholic Charities.
+			</p>
+			<p>
+				If you desire to know more about the Catholic faith and would like to register, please call the rectory at 773.625.3369 and ask for Deacon Sonny and Barbara Annoreno or email us at <a href="mailto:oneronna@comcast.net?subject=Our Lady Mother Church - RCIA" target="_new">oneronna@comcast.net</a>. There is no cost or obligation for this process. Some paperwork is required before sessions begin. Registration deadline is September 1, 2015.
+			</p>
 
 		<footer class="footer" style="margin-top:20px;">
 			<div class="row">
@@ -130,19 +135,13 @@
 	      	</div>
     	</footer>
 	</div>
-
-    <!-- Modules -->
-    <script src="/angular/app.js"></script>
-
-    <!-- Controllers -->
-    <script src="/angular/controllers/MainController.js"></script>
-
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
-	
+
+
 	<script type="text/javascript">
 		
 		var _gaq = _gaq || [];
