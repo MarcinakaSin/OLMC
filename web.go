@@ -95,7 +95,7 @@ func contactRequestHandler(w http.ResponseWriter, r *http.Request) {
 		context.Errorf("the email could not be sent: %v", error)
 	}
 	
-	http.ServeFile(w, r, "static/html/contact_sent.html")
+	http.ServeFile(w, r, "static/html/contact/contact_sent.html")
 }
 
 type UploadBlobResponse struct {

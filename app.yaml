@@ -4,18 +4,16 @@ runtime: go
 api_version: go1
 
 handlers:
+##  Contact Information Sections
 - url: /about
-  static_files: static/html/about.html
-  upload: static/html/about.html
+  static_files: static/html/contact/about.html
+  upload: static/html/contact/about.html
 - url: /contact
-  static_files: static/html/contact.html
-  upload: static/html/contact.html
+  static_files: static/html/contact/contact.html
+  upload: static/html/contact/contact.html
 - url: /staff
-  static_files: static/html/staff.html
-  upload: static/html/staff.html
-- url: /times
-  static_files: static/html/times.html
-  upload: static/html/times.html
+  static_files: static/html/contact/staff.html
+  upload: static/html/contact/staff.html
 
 ##  Education Sections
 - url: /education
@@ -32,6 +30,9 @@ handlers:
   upload: static/html/education/sacrament.html
 
 ##  Worship Sections
+- url: /times
+  static_files: static/html/worship/times.html
+  upload: static/html/worship/times.html
 - url: /funerals
   static_files: static/html/worship/funerals.html
   upload: static/html/worship/funerals.html

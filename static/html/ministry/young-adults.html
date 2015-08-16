@@ -37,12 +37,13 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
 			<li><a href="/">Welcome</a></li>
-			<li><a href="/times">Mass Times</a></li>
 			<li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Worship<span class="caret"></span></a>
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Worship <span class="caret"></span></a>
 	            <ul class="dropdown-menu" role="menu">
+				  <li><a href="/times">Mass Times</a></li>
+	              <li class="divider"></li>
 	              <li><a href="/funerals">Funerals</a></li>
-	              <!--<li class="divider"></li>-->
+	              <li class="divider visible-xs-block"></li>
 	            </ul>
 	        </li>
 			<li><a href="/bulletin">Bulletin</a></li>
@@ -53,7 +54,7 @@
 	              <li><a href="/education">Information and Registration</a></li>
 	              <li><a href="/edu-calendar">RE Program Calendar</a></li>
 	              <li><a href="/sacrament">Sacramental Preparation Process</a></li>
-	              <!--<li class="divider"></li>-->
+	              <li class="divider visible-xs-block"></li>
 	            </ul>
 			</li>
 			<li class="dropdown">
@@ -64,16 +65,24 @@
 	              <li><a href="/parents">Parents Ministry</a></li>
 	              <li><a href="/RCIA">RCIA</a></li>
 	              <li><a href="/spiritual-direction">Spiritual Direction</a></li>
-	              <!--<li class="divider"></li>-->
+	              <li class="divider visible-xs-block"></li>
 	            </ul>
 			</li>
-			<li><a href="/staff">Staff</a></li>
-			<li><a href="/contact">Contact</a></li>
-			<li ><a href="/about">About</a></li>
+			<li class="dropdown">
+				<a href="/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact Information <span class="caret"></span></a>
+	            <ul class="dropdown-menu" role="menu">
+					<li><a href="/staff">Staff</a></li>
+					<li><a href="/contact">Contact</a></li>
+	              	<li class="divider"></li>
+	              	<li><a href="https://connectnow.parishsoft.com/Chicago/Default.aspx" target="_blank">ConnectNow</a></li>
+	              	<li class="divider"></li>
+					<li><a href="/about">About</a></li>
+	            </ul>
+			</li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://connectnow.parishsoft.com/Chicago/Default.aspx" target="_blank">ConnectNow</a></li>
-          </ul>
+          <!--<ul class="nav navbar-nav navbar-right">
+     		//	Right side navbar
+          </ul>-->
         </div><!--/.nav-collapse -->
       </div>
     </nav>
