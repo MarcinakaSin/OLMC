@@ -14,6 +14,10 @@ handlers:
 - url: /staff
   static_files: static/html/contact/staff.html
   upload: static/html/contact/staff.html
+- url: /connectnow
+  static_files: static/html/contact/connectnow.html
+  upload: static/html/contact/connectnow.html
+
 
 ##  Education Sections
 - url: /education
