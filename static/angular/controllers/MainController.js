@@ -331,6 +331,11 @@ app.controller('MainController', ['$scope', function($scope) {
       location: 'Hayes Center'
     },
     {
+      date: 'December 19',
+      activity: 'Catechist Christmas Party',
+      location: 'Hayes Center 6:00 p.m.'
+    },
+    {
       date: 'January 6',
       activity: 'Catechist meeting',
       location: 'RE Office, 7:00 p.m.'
@@ -441,7 +446,7 @@ app.controller('MainController', ['$scope', function($scope) {
       location: 'Church'
     },
     {
-      date: 'May 12',
+      date: 'May 11',
       activity: 'Confirmation, 7:30 p.m.',
       location: 'Church and Hayes Center'
     }
