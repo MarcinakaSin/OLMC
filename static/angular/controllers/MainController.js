@@ -321,11 +321,6 @@ app.controller('MainController', ['$scope', function($scope) {
       location: 'Hayes Center (Church 11:00)'
     },
     {
-      date: 'December 19',
-      activity: 'Catechist Christmas Party',
-      location: 'Hayes Center 6:00 p.m.'
-    },
-    {
       date: 'December 12',
       activity: 'RE session and Posadas',
       location: 'Hayes Center'

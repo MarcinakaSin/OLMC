@@ -21,7 +21,7 @@
     <![endif]-->
 	
 	<style type="text/css">
-		{{range .}}
+	/*	{{range .}}
 		
 		@media screen and (-webkit-min-device-pixel-ratio: 2) {
 			#b{{.Identifier}} {
@@ -29,7 +29,7 @@
 			}
 		}
 		
-		{{end}}
+		{{end}}*/
 	</style>
 </head>
 <body>
@@ -49,10 +49,12 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				We are currently experiencing some issues displaying current bulletins. For our latest Bulletin please visit <a href="https://www.e-churchbulletins.com/bulletins/009236.pdf" target="_new">https://www.e-churchbulletins.com/bulletins/009236.pdf</a>
+			For our latest Bulletin please visit <a href="https://www.e-churchbulletins.com/bulletins/009236.pdf" target="_new">https://www.e-churchbulletins.com/bulletins/009236.pdf</a><br />
+
+			<iframe width="100%" height="1000px" src="https://www.e-churchbulletins.com/bulletins/009236.pdf"></iframe>
 				<br /><br />
 			</div>
-			{{range .}}
+			<!--{{range .}}
 			<div class="col-md-3">
 				<div class="bulletin center">
 					<a target="_blank" href="/serve?key={{.DataKey}}&type=pdf">
@@ -62,7 +64,7 @@
 					<p>{{.Name}}</p>
 				</div>
 			</div>
-			{{end}}
+			{{end}}-->
 			
 		</div>
 		<footer class="footer" style="margin-top:20px;">
